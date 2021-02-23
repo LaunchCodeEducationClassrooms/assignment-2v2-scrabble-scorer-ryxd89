@@ -34,20 +34,16 @@ function oldScrabbleScorer(word) {
 	return letterPoints;
  }
 
- function vowelScorer(word) {
-	word = word.toUpperCase();
-	let letterPoints = "";
-	for (let i = 0; i < word.length; i++) {
-	  for (const pointValue in vowelBonusStructure) {
-		 if (vowelBonusStructure[pointValue].includes(word[i])) {
-			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
-		 }
-	  }
-	}
-	return letterPoints;
- };
 
- function simpleScorer(word) {
+// your job is to finish writing these functions and variables that we've named //
+// don't change the names or your program won't work as expected. //
+
+function initialPrompt() {
+   let word = input.question("Let's play some scrabble! Enter a word: ");
+   console.log(oldScrabbleScorer(word))
+};
+
+let simpleScore = function simpleScorer(word) {
 	word = word.toUpperCase();
 	let letterPoints = "";
 	for (let i = 0; i < word.length; i++) {
@@ -60,24 +56,25 @@ function oldScrabbleScorer(word) {
 	return letterPoints;
  };
 
-// your job is to finish writing these functions and variables that we've named //
-// don't change the names or your program won't work as expected. //
-
-function initialPrompt() {
-   let word = input.question("Let's play some scrabble! Enter a word: ");
-   console.log(oldScrabbleScorer(word))
-};
-
-let simpleScore = "Simple Score"
-
-let vowelBonusScore = "Bonus Vowels"
+let vowelBonusScore = function vowelScorer(word) {
+	word = word.toUpperCase();
+	let letterPoints = "";
+	for (let i = 0; i < word.length; i++) {
+	  for (const pointValue in vowelBonusStructure) {
+		 if (vowelBonusStructure[pointValue].includes(word[i])) {
+			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
+		 }
+	  }
+	}
+	return letterPoints;
+ };
 
 let scrabbleScore = "Scrabble";
 
-const scoringAlgorithms = [oldScrabbleScorer, simpleScore, vowelBonusScore];
+const scoringAlgorithms = [oldScrabbleScorer, simpleScorer, vowelScorer];
 
-function scorerPrompt(name, description, func) {
-  
+function scorerPrompt() {
+
 }
 
 function transform() {};
