@@ -71,7 +71,7 @@ let vowelBonusScore = function vowelScorer(word) {
 
 let scrabbleScore = "Scrabble";
 
-const scoringAlgorithms = [oldScrabbleScorer, simpleScorer, vowelScorer];
+const scoringAlgorithms = [oldScrabbleScorer, simpleScore, vowelBonusScore];
 
 function scorerPrompt() {
 
