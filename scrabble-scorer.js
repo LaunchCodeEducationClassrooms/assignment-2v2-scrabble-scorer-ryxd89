@@ -33,7 +33,7 @@ function oldScrabbleScorer(word) {
 	}
 	return letterPoints;
  }
-let simpleScore = function simpleScorer(word) {
+function simpleScore(word) {
 	word = word.toUpperCase();
 	let letterPoints = "";
 	for (let i = 0; i < word.length; i++) {
@@ -46,7 +46,7 @@ let simpleScore = function simpleScorer(word) {
 	return Number(letterPoints);
  };
 
-let vowelBonusScore = function vowelScorer(word) {
+function vowelBonusScore(word) {
 	word = word.toUpperCase();
 	let letterPoints = "";
 	for (let i = 0; i < word.length; i++) {
@@ -59,7 +59,7 @@ let vowelBonusScore = function vowelScorer(word) {
 	return Number(letterPoints);
  };
 
-let scrabbleScore = function scrabbleScorer(word){
+function scrabbleScore(word){
 
 word = word.toLowerCase();
 	let letterPoints = 0;
@@ -91,7 +91,7 @@ const scoringAlgorithms = [scrabbleScore, simpleScore, vowelBonusScore];
 function scorerPrompt()  {
   console.log(`Which scoring method would you like to use?\n\n
 0 - ${simpleScorer.name}: ${simpleScorer.description}\n
-1 - ${vowelBonusScorer.name}: ${vowelBonusScorer.description}\n
+1 - ${vowelBonusScorer.name}: ${vowelBonusScore.description}\n
 2 - ${scrabbleScorer.name}: ${scrabbleScorer.description}\n`)
   let num = input.question("Enter 0, 1, or 2: ")
   if (num == 0) {
