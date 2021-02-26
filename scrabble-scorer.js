@@ -43,7 +43,7 @@ let simpleScore = function simpleScorer(word) {
 		 }
 	  }
 	}
-	return letterPoints;
+	return Number(letterPoints);
  };
 
 let vowelBonusScore = function vowelScorer(word) {
@@ -56,7 +56,7 @@ let vowelBonusScore = function vowelScorer(word) {
 		 }
 	  }
 	}
-	return letterPoints;
+	return Number(letterPoints);
  };
 
 let scrabbleScore = function scrabbleScorer(word){
@@ -70,7 +70,7 @@ word = word.toLowerCase();
 		 }
 	  }
 	}
-	return letterPoints;
+	return Number(letterPoints);
  }
 
 
