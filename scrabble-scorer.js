@@ -43,7 +43,7 @@ function simpleScore(word) {
 		 }
 	  }
 	}
-	return Number(letterPoints);
+	return (letterPoints);
  };
 
 function vowelBonusScore(word) {
@@ -56,7 +56,7 @@ function vowelBonusScore(word) {
 		 }
 	  }
 	}
-	return Number(letterPoints);
+	return (letterPoints);
  };
 
 function scrabbleScore(word){
@@ -70,7 +70,7 @@ word = word.toLowerCase();
 		 }
 	  }
 	}
-	return Number(letterPoints);
+	return (letterPoints);
  }
 
 
@@ -86,7 +86,7 @@ let simpleScorer = {name:`Simple Score`, description:`Each letter is worth 1 poi
 let vowelBonusScorer = {name:`Vowel Bonus`, description:`Vowels are worth 3 points and consonants are worth 1 point`, scoringFunction:vowelBonusScore};
 let scrabbleScorer = {name:`Scrabble`, description:`The original Scrabble scores`, scoringFunction:scrabbleScore};
 
-const scoringAlgorithms = [scrabbleScore, simpleScore, vowelBonusScore];
+const scoringAlgorithms = [scrabbleScorer, simpleScorer, vowelBonusScorer];
 
 function scorerPrompt()  {
   console.log(`Which scoring method would you like to use?\n\n
